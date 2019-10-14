@@ -12,5 +12,7 @@ export function doSomeStuff(withThis: string, andThat: string, andThose: string[
     console.log(withThis);
     console.log(andThat);
     console.dir(andThose);
+
+    return null
 }
 // TODO: more examples

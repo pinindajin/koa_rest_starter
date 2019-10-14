@@ -17,15 +17,17 @@
   "license": "ISC",
   "dependencies": {
     "@koa/router": "^8.0.2",
-    "@types/koa-bodyparser": "^4.3.0",
-    "@types/koa2-cors": "^2.0.1",
     "koa": "^2.10.0",
     "koa-bodyparser": "^4.2.1",
     "koa2-cors": "^2.0.6"
   },
   "devDependencies": {
+    "@types/koa": "^2.0.50",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa2-cors": "^2.0.1",
+    "@types/node": "^10.0.3",
+    "@types/koa-router": "^7.0.42",
     "gts": "^1.1.0",
-    "typescript": "~3.5.0",
-    "@types/node": "^10.0.3"
+    "typescript": "~3.5.0"
   }
 }
