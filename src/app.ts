@@ -1,18 +1,19 @@
-console.log("Try npm run check/fix!");
+import * as Koa from 'koa'
+import * as Router from 'koa-router'
+import * as cors from 'koa2-cors'
+import * as bodyparser from 'koa-bodyparser'
+import { initRoutes } from './router/router'
 
-const longString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';
+const app = new Koa()
 
-const trailing = 'Semicolon'
+app.use(cors)
 
-            const why = 'am I tabbed?';
+app.use(bodyparser)
 
-export function doSomeStuff(withThis: string, andThat: string, andThose: string[]) {
-    //function on one line
-    if(!andThose.length) {return false;}
-    console.log(withThis);
-    console.log(andThat);
-    console.dir(andThose);
+const router = new Router()
+initRoutes(router)
+app.use(router.routes())
 
-    return null
-}
-// TODO: more examples
+app.listen(3131)
+
+// TODO: Config, Auth, CRUD Routes, Socketio
