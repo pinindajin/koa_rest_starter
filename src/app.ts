@@ -1,5 +1,5 @@
 import * as Koa from 'koa'
-import * as Router from 'koa-router'
+import * as Router from '@koa/router'
 import * as cors from 'koa2-cors'
 import * as bodyparser from 'koa-bodyparser'
 import { initRoutes } from './router/router'
@@ -11,9 +11,10 @@ app.use(cors)
 app.use(bodyparser)
 
 const router = new Router()
-initRoutes(router)
-app.use(router.routes())
+const routerWithRoutes = initRoutes(router)
+app.use(routerWithRoutes.routes())
 
 app.listen(3131)
+console.log(`Listening on port ${3131}`)
 
-// TODO: Config, Auth, CRUD Routes, Socketio
+// TODO: Config, Auth, CRUD Routes, Socketio, Logging(local dump + remote)
